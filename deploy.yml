@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: swiggy
-  name: swiggy-deploy
+    app: ecommerce
+  name: ecommerce-deploy
 spec:
-  replicas: 6
+  replicas: 3
   selector:
     matchLabels:
-      app: swiggy
+      app: ecommerce
   template:
     metadata:
       labels:
-        app: swiggy
+        app: ecommerce
     spec:
       containers:
       - name: cont1
-        image: rahamshaik/trainservice:latest
+        image: phani2612/e-commerce
         ports:
           - containerPort: 80
 ---
@@ -27,7 +27,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: swiggy
+    app: ecommerce
   ports:
     - port: 80
       targetPort: 80
