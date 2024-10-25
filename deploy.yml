@@ -3,20 +3,20 @@ kind: Deployment
 metadata:
   labels:
     app: paytm
-  name: nandhan-deploy
+  name: train-deploy
 spec:
   replicas: 5
   selector:
     matchLabels:
-      app: nandhan-deploy
+      app: train-deploy
   template:
     metadata:
       labels:
-        app: nandhan-deploy
+        app: train-deploy
     spec:
       containers:
       - name: cont1
-        image: phani2612/nandhan:latest
+        image: phani2612/trainrepo:latest
         ports:
           - containerPort: 80
 ---
@@ -27,7 +27,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: nandhan-deploy
+    app: train-deploy
   ports:
     - port: 80
       targetPort: 80
