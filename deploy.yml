@@ -8,11 +8,11 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: paytm
+      app: nandhan-deploy
   template:
     metadata:
       labels:
-        app: paytm
+        app: nandhan-deploy
     spec:
       containers:
       - name: cont1
@@ -27,7 +27,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: paytm
+    app: nandhan-deploy
   ports:
     - port: 80
       targetPort: 80
