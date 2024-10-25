@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: paytm
-  name: paytm
+  name: nandhan-deploy
 spec:
   replicas: 3
   selector:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: cont1
-        image: phani2612/dthrepo:latest
+        image: phani2612/nandhan:latest
         ports:
           - containerPort: 80
 ---
