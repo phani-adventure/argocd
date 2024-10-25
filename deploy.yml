@@ -5,7 +5,7 @@ metadata:
     app: paytm
   name: nandhan-deploy
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: nandhan-deploy
