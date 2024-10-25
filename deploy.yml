@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: ecommerce
-  name: ecommerce-deploy
+    app: paytm
+  name: paytm-deploy
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: ecommerce
+      app: paytm
   template:
     metadata:
       labels:
-        app: ecommerce
+        app: paytm
     spec:
       containers:
       - name: cont1
-        image: phani2612/e-commerce
+        image: phani2612/dthrepo:latest
         ports:
           - containerPort: 80
 ---
@@ -27,7 +27,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: ecommerce
+    app: paytm
   ports:
     - port: 80
       targetPort: 80
